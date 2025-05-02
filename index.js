@@ -1,4 +1,4 @@
-const app = express();
+/*const app = express();
 app.get("/", (req, res) => {
   res.send(
    setInterval(function() {
@@ -9,6 +9,21 @@ app.get("/", (req, res) => {
          return mensaje;
    },15000);
   );
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor listo en puerto ${PORT}`);
+});*/
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  let mensajes = [];
+  for (let n = 1; n <= 40; n++) {
+    mensajes.push("hola mundo " + n);
+  }
+  res.send(mensajes.join("<br>")); // Envía todos los mensajes como HTML
 });
 
 const PORT = process.env.PORT || 3000;
