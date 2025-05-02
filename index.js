@@ -1,10 +1,12 @@
 // 🔹 Servidor Express (siempre activo)
 const express = require("express");
+const generarMensaje = require("./intervalo"); // importa la función del archivo
 const app = express();
 const path = require("path");
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname,'intervalo.js'))
+  const resultado = generarMensaje(); // ejecuta la función
+  res.send(`<pre>${resultado}</pre>`); // envía el resultado como texto
 });
 
 const PORT = process.env.PORT || 3000;
