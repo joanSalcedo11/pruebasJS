@@ -1,33 +1,11 @@
-/*const app = express();
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor listo en puerto ${PORT}`);
+});
+
+const app = express();
 app.get("/", (req, res) => {
-  res.send(
-   setInterval(function() {
-     for(var n=1;n=40;n++){
-       var mensaje = "hola mundo"+n;
-     }
-   }
-         return mensaje;
-   },15000);
+  res.sendFile(path.join(__dirname,'interval.js'))
+   
   );
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor listo en puerto ${PORT}`);
-});*/
-const express = require("express");
-const app = express();
-
-app.get("/", (req, res) => {
-  let mensajes = [];
-  for (let n = 1; n <= 40; n++) {
-    mensajes.push("hola mundo " + n);
-  }
-  res.send(mensajes.join("<br>")); // Envía todos los mensajes como HTML
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor listo en puerto ${PORT}`);
-});
-
