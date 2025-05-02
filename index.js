@@ -5,7 +5,7 @@ app.listen(PORT, () => {
 
 const app = express();
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname,'interval.js'))
+  res.sendFile(path.join(__dirname,'intervalo.js'))
    
   );
 });
